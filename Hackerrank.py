@@ -1,4 +1,5 @@
-#https://www.hackerrank.com/challenges/grading/problem
+
+#1. https://www.hackerrank.com/challenges/grading/problem
 
 grades=[13,45,67,43]
 new_grade=[]
@@ -15,7 +16,7 @@ for ind,grade in enumerate(grades):
 return(new_grade)
 #Hackerrank
 
-#https://www.hackerrank.com/challenges/diagonal-difference/problem
+#2. https://www.hackerrank.com/challenges/diagonal-difference/problem
 
 arr= [[11,2,4],[4,5,6],[10,8,-12]]
 sum1=0
@@ -32,7 +33,7 @@ if sum1>sum2:
 else:
     return(sum2-sum1)
 
-#https://www.hackerrank.com/contests/smart-interviews/challenges/si-print-right-angled-triangle-pattern/problem
+#3. https://www.hackerrank.com/contests/smart-interviews/challenges/si-print-right-angled-triangle-pattern/problem
 
 t=int(input())
 for p in range(1,t+1):
@@ -49,4 +50,29 @@ for p in range(1,t+1):
                 print('*',end='')
         print()
 
+#4. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-sum-of-two-matrices/submissions/code/1328018402
+
+n,m=input().split()
+n=int(n)
+m=int(m)
+arr1=[input().split() for i in range(n)]
+arr2=[input().split() for i in range(n)]
+sum_arr=[]
+for i in range(n):
+    chota_sum=[]
+    for j in range(m):
+        chota_sum.append(0)
+    sum_arr.append(chota_sum)
+    del (chota_sum)
+
+for ind,i in enumerate(arr1):
+    for j_ind,j in enumerate(arr2):
+        if ind==j_ind:
+            for element_ind,element in enumerate(i):
+                sum_arr[ind][element_ind]=int(element)+int(j[element_ind])
+
+for i in sum_arr:
+    for j in i:
+        print(j,end=' ')
+    print()
 
