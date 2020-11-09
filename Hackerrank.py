@@ -76,3 +76,89 @@ for i in sum_arr:
         print(j,end=' ')
     print()
 
+#5. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-matrix-row-sum
+
+n,m=input().split()
+n=int(n)
+m=int(m)
+arr1=[input().split() for i in range(n)]
+sum_arr=[0]*n
+num_rows=len(arr1)
+num_cols=len(arr1[0])
+
+
+for i in range(0,num_rows):
+    for j in range(0,num_cols):
+        sum_arr[i]+=int(arr1[i][j])
+for i in sum_arr:
+    print(i)
+
+#6. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-transpose-matrix
+
+n,m=input().split()
+n=int(n)
+m=int(m)
+arr1=[input().split() for i in range(n)]
+new_arr=[]
+
+num_rows=len(arr1)
+num_cols=len(arr1[0])
+for i in range(0,num_cols):
+    new_small_arr=[]
+    for j in range(0,num_rows):
+        new_small_arr.append(arr1[j][i])
+    new_arr.append(new_small_arr)
+    del new_small_arr
+
+for  i in new_arr:
+    for j in i:
+        print(j,end=' ')
+    print()
+
+
+
+#7. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-matrix-column-sum
+
+n,m=input().split()
+n=int(n)
+m=int(m)
+arr1=[input().split() for i in range(n)]
+sum_arr=[0]*m
+num_rows=len(arr1)
+num_cols=len(arr1[0])
+for i in range(0,num_cols):
+    for j in range(0,num_rows):
+        
+        sum_arr[i]+=int(arr1[j][i])
+for i in sum_arr:
+    print(i)
+    
+#8. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-a-sparse-matrix
+
+n,m=input().split()
+n=int(n)
+m=int(m)
+arr1=[input().split() for i in range(n)]
+num_rows=len(arr1)
+num_cols=len(arr1[0])
+count=0
+for i in range(0,num_rows):
+    for j in range(0,num_cols):
+        if int(arr1[i][j])==0:
+            count+=1
+if count>(n*m)/2:
+    print("Yes")
+else:
+    print("No")
+
+#9. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-digits-sum
+
+a=int(input())
+sum=0
+while a>0:
+    r=a%10
+    sum=sum+r
+    a=a//10
+print(sum)
+
+# https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-number-of-multiples/submissions/code/1328044850
