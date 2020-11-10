@@ -197,3 +197,49 @@ if __name__ == '__main__':
 
     fptr.close()
 
+#12. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-triangle-validator/problem
+
+n=list(map(int,input().split(' ')))
+case_results=[]
+master=[]
+count=0
+new=[]
+for i in range(len(n)):
+    
+    a=n.copy()
+    first=a.pop(i)
+    second,third=a
+    new= [j for j in [first,second,third]]
+    master.append(new)
+    a.reverse()
+    second,third=a
+    new= [j for j in [first,second,third]]
+    master.append(new)
+    del new
+for i in master:
+    a,b,c=i
+    if a+b>c:
+        count+=1
+    else:
+        print("No")
+        break
+if count==6:
+    print("Yes")
+
+#13. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-long-factorial
+
+n=int(input())
+a=[1]
+for i in range(1,n+1):
+    a.append(a[i-1]*i)
+print(a[-1])
+
+#14. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-natural-numbers-sum/problem
+
+n=int(input())
+print(round(n*(n+1)/2))
+
+#15. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-cubes-sum/problem
+
+n=int(input())
+print(int((n*(n+1))*(n*(n+1))/4))

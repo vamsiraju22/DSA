@@ -1,6 +1,6 @@
 #CODEFORCES
 
-#http://codeforces.com/problemset/problem/71/A
+#1.http://codeforces.com/problemset/problem/71/A
 
 t=int(input())
 for p in range(1,t+1):
@@ -123,7 +123,7 @@ else:
     cs=3-c
 print(rs+cs)
 
-# https://codeforces.com/problemset/problem/339/A
+#10. https://codeforces.com/problemset/problem/339/A
 
 a= list(map(int,input().split('+')))
 a.sort()
