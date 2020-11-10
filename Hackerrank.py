@@ -161,4 +161,39 @@ while a>0:
     a=a//10
 print(sum)
 
-# https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-number-of-multiples/submissions/code/1328044850
+#10. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-number-of-multiples/submissions/code/1328044850
+
+n=int(input())
+print(n//3+n//5-n//15)
+
+#11. https://www.hackerrank.com/challenges/arrays-ds/problem
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the reverseArray function below.
+def reverseArray(a):
+    res=[]
+    for i in range(len(a),0,-1):
+        #print(a[i-1])
+        res.append(a[i-1])
+    return(res)
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    arr_count = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    res = reverseArray(arr)
+
+    fptr.write(' '.join(map(str, res)))
+    fptr.write('\n')
+
+    fptr.close()
+
