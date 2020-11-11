@@ -243,3 +243,105 @@ print(round(n*(n+1)/2))
 
 n=int(input())
 print(int((n*(n+1))*(n*(n+1))/4))
+
+#16. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-squares-sum/problem
+
+n=int(input())
+print(int(n*(n+1)*((2*n)+1)/6))
+
+#17. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-prime-or-not/problem
+
+n=int(input())
+i=2
+count=0
+while(i**2<=n):
+    if n<2:
+        break
+    if n==2:
+        break
+    else:
+        if n%i==0:
+            if i!=n:
+                count+=1
+    i+=1
+if count==0:
+    if n!=1:
+        print('Yes')
+    else:
+        print("No")
+else:
+    print("No")
+#18. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-narcissistic-numbers/problem
+
+n=input()
+sum1=0
+dig=len(".".join(n).split('.'))
+a=int(n)
+while n!=0:
+    #print(n%10)
+    rem=int(n)%10
+    sum1+=rem**dig
+    n=int(n)//10
+if sum1==a:
+    print("Yes")
+else:
+    print("No")
+    
+#19. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-harshad-number
+
+n=input()
+sum1=0
+new=list(map(int,list(".".join(n).split('.'))))
+for i in new:
+    sum1+=i
+if int(n)%sum1==0:
+    print("Yes")
+else:
+    print("No")
+
+#20. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-number-reverse
+
+def rev(num):
+    n=num
+    while n!=0:
+        rem=n%10
+        l.append(rem)
+        n=n//10
+    return(list(map(int,l)))
+
+num=int(input())
+l=[]
+sum1=0
+
+if num<0:
+    new=rev(num*-1)
+    for ind,i in enumerate(new):
+        dig=10**(len(new)-1-ind)
+        sum1=sum1+dig*i
+    print(sum1*-1)
+if num>=0:
+    new=rev(num)
+    for ind,i in enumerate(new):
+        dig=10**(len(new)-1-ind)
+        sum1=sum1+dig*i
+    print(sum1)
+
+#21. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-right-angled-triangle-pattern-1
+
+n=int(input())
+count=1
+for i in range(1,n+1):
+    for j in range(i):
+        print(count,end=' ')
+        count+=1
+    print()
+
+#22. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-letters-of-the-alphabet
+
+s=input()
+if len(set(s.lower()))==26:
+    print("Yes")
+else:
+    print("No")
+
+#23. # https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-right-angled-triangle-pattern-2
