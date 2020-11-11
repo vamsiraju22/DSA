@@ -345,3 +345,77 @@ else:
     print("No")
 
 #23. # https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-right-angled-triangle-pattern-2
+
+n=int(input())
+
+for i in range(1,n+1):
+    value=i
+    for j in range(1,i+1):
+        print(value,end=' ')
+        value+=n-j
+    print()
+
+#24. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-digits-in-a-string
+
+s=input()
+count=0
+for i in s:
+    if 47<ord(str(i))<58:
+        count+=1
+if count==len(s):
+    print("Yes")
+else:
+    print("No")
+    
+#25. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-vowels-in-a-string
+
+s=input()
+s=s.lower()
+vow=['a','e','i','o','u']
+count=0
+for i in s:
+    if i in vow:
+        count+=1
+if count==len(s):
+    print("Yes")
+else:
+    print("No")
+
+#26. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-print-pyramid-pattern
+
+n=int(input())
+l=[]
+for i in range(1,n+1):
+    l.append("*"*(i*2-1))
+l=l[::-1]
+p1=((2*n)+1)//2
+for i in range(1,n+1):
+    for j in range(1,n+1):
+            if j==p1:
+                print(l[p1-1],end='')
+                p1-=1
+            else:
+                print(' ',end='')
+    print()
+          
+#27. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-print-multiplication-table
+
+n=int(input())
+
+for i in range(1,11):
+    print("{} * {} = {}".format(n,i,n*i))            
+
+#28. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-print-half-diamond-pattern
+
+maximum=int(input()) #n=int(input())
+n=(2*maximum)-1 #maximum=int((n+1)/2)
+l=[]
+p1=maximum-1
+for i in range(1,n+1):
+    if i<=maximum:
+        l.append("*"*i)
+    else:
+        l.append("*"*p1)
+        p1-=1
+for i in range(0,n):
+    print(l[i])
