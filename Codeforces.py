@@ -131,3 +131,12 @@ res=""
 for i in a:
     res+=str(i)+"+"
 print(res[:-1])
+
+#11. https://codeforces.com/problemset/problem/236/A
+
+s=input()
+num=len(set(s))
+if num%2==0:
+    print("CHAT WITH HER!")
+else:
+    print("IGNORE HIM!")

@@ -1,7 +1,7 @@
 #Interviewbit
 
 #C++
-#https://www.interviewbit.com/problems/number-of-1-bits/
+#1. https://www.interviewbit.com/problems/number-of-1-bits/
 
 int Solution::numSetBits(unsigned int A) {
     int c=0;
