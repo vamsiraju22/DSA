@@ -419,3 +419,37 @@ for i in range(1,n+1):
         p1-=1
 for i in range(0,n):
     print(l[i])
+   
+#29. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-reverse-string/problem
+
+s=input()
+print(s[::-1])
+
+#30. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-occurrence-of-a-character-1
+
+s=input()
+count=0
+c=input()
+for i in s:
+    if i==c:
+        count+=1
+print(count)
+
+#31. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-count-vowels-and-consonants
+
+s=input().lower()
+count_v=0
+count_c=0
+vowels=['a','e','i','o','u']
+total=[]
+for i in range(97,123):
+    total.append(chr(i))
+consonants=set(total)-set(vowels)
+s.lower()
+for i in s:
+    if i in vowels:
+        count_v+=1
+    if i in consonants:
+        count_c+=1
+print(count_v,end=' ')
+print(count_c)
