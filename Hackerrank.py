@@ -453,3 +453,83 @@ for i in s:
         count_c+=1
 print(count_v,end=' ')
 print(count_c)
+
+#32. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-palindrome-pyramid-pattern
+pos=1
+val=0
+a=65
+n=int(input())
+for i in range(1,n+1):
+    for j in range(1,2*i):
+        if i<=j:
+            val=chr(a+pos-1)
+            print(val,end=' ')
+            pos-=1
+        if i>j:
+            val=chr(a+pos-1)
+            print(val,end=' ')
+            pos+=1
+    pos=1
+    print()
+    
+#33. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-odd-even-index/problem
+
+s=input()
+res=""
+for ind,i in enumerate(s):
+    if ind%2!=0:
+        #print(i,end='')
+        res+=i
+for ind,i in enumerate(s):
+    if ind%2==0:
+        res+=i
+print(res)
+
+#34. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-inverted-pyramid-pattern
+n=int(input()) 
+count=n
+pos=n
+for i in range(0,n):
+    for j in range(n-i):
+        #print(j,end='')
+        if j==0 or j==n-i-1 or i==0:
+            print('* ',end='')
+        else:
+            print('  ',end='')
+    print()
+    
+#35. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-hollow-rectangle-pattern/problem
+
+l,w = list(map(int,input().split()))
+for i in range(0,w):
+    for j in range(l):
+        if j==0 or j==l-1 or i==0 or i==w-1:
+            print('*',end='')
+        else:
+            print(' ',end='')
+    print()
+
+#36. https://www.hackerrank.com/contests/smart-interviews-basic/challenges/si-basic-rectangle-pattern/problem
+
+n=int(input())
+for i in range(n):
+    for j in range(n,0,-1):
+        if j==i+1:
+            print('*',end='')
+        else:
+            print(j,end='')
+    print()
+
+#37. https://www.hackerrank.com/contests/smart-interviews/challenges/si-trailing-zeros/problem
+
+t=int(input())
+for tc in range(t):
+    count=0
+    n=int(input())
+    i=5
+    rem=n//i
+    while(rem!=0):
+        rem=n//i
+        count+=rem
+        i=i*5
+    print(count)
