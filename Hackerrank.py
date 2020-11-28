@@ -533,3 +533,145 @@ for tc in range(t):
         count+=rem
         i=i*5
     print(count)
+
+#38. https://www.hackerrank.com/contests/smart-interviews/challenges/si-binary-representation/problem
+t=int(input())
+def binary1(num):
+    l=[]
+    rem=0
+    if num==0:
+        return(0)
+    if num==1:
+        return(1)
+    while num>1:
+        rem=num%2
+        l.append(rem)
+        num=num//2
+        if num==1:
+            l.append(1)
+    return(''.join(map(str,l[::-1])))
+
+for i in range(t):
+    num=int(input())
+    print(binary1(num))
+    
+#39. https://www.hackerrank.com/contests/smart-interviews/challenges/si-check-power-of-two
+t=int(input())
+def count_setbits(n):
+        count=0
+        while n>0:
+            count+= n&1
+            n=n>>1
+        #print(count)
+        return(count)
+for i in range(t):    
+    n=int(input())
+    
+    if count_setbits(n)==1:
+        print(True)
+    else:
+        print(False)
+        
+#40. https://www.hackerrank.com/contests/smart-interviews/challenges/si-finding-missing-number
+
+t=int(input())
+for i in range(t):
+    n=int(input())
+    old=list(map(str,input().split(' ')))
+    s=' '.join(old)
+    s=s.rstrip()
+    new=s.split(' ')
+    l= list(map(int,new)) 
+    sum1=sum(l)
+    n=n+1
+    sum2=(n*(n+1))//2
+    print(sum2-sum1)
+    
+#41. https://www.hackerrank.com/contests/smart-interviews/challenges/si-reverse-bits
+
+t=int(input())
+def checkbit(n, i): 
+    if n & (1 << (i - 1)): 
+        return(True) 
+    else: 
+        return(False)
+for tc in range(t):
+    n=int(input())
+    a=''
+    for i in range(1,33):
+        if checkbit(n,i) == True:
+            a+='1'
+        else:
+            a+='0'
+    print(int(a,2))
+
+t=int(input())
+for tc in range(t):
+    num=int(input())
+    reverse_num=0
+    for i in range(33):
+        temp = (num & (1 << i)) 
+        #print(temp,"--",binary1(num),binary((1<<i)),(num & (1 << i)))
+        if(temp): 
+            reverse_num |= (1 << ((32 - 1) - i))
+            #print("rev",binary1(reverse_num))
+    print(reverse_num) 
+
+#42. https://www.hackerrank.com/contests/smart-interviews/challenges/si-compute-a-power-b
+t=int(input())
+for i in range(t):
+    a,n = list(map(int,input().split(' ')))
+    M=1e9+7
+    a=a%M
+    ans=1
+    while(n>0):
+        ans=(ans*a)%M
+        n-=1
+    print(int(ans))
+
+#43. https://www.hackerrank.com/contests/smart-interviews/challenges/si-triple-trouble
+
+t=int(input())
+def checkbit(n, i): 
+    if n & (1 << (i - 1)): 
+        return(True) 
+    else: 
+        return(False)
+
+def totalbits(num):
+        count=0
+        n=num
+        setbits=0
+        unsetbits=0
+        while n>0:
+            if n&1 == 1:
+                setbits+= n&1
+            else:
+                unsetbits+=1
+            n=n>>1
+        return(setbits,unsetbits)
+for tc in range(t):
+    n=int(input())
+    l=list(map(int,input().rstrip().split(' ')))
+    setbits,unsetbits=totalbits(max(l))
+    a=[]
+    set_count=0
+    unset_count=0
+    new=1
+    for i in range(1,setbits+unsetbits+1):
+        set_count=0
+        unset_count=0
+        for j in l:
+            if checkbit(j,i)==True:
+                set_count+=1
+            else:
+                unset_count+=1
+            
+        if set_count%3!=0:
+            a.append(1)
+            new=new<<1
+        elif unset_count%3!=0:
+            a.append(0)
+    a=list(map(str,a[::-1]))
+    s=''.join(a)
+    print((int(s,2)))
