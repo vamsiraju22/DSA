@@ -675,3 +675,69 @@ for tc in range(t):
     a=list(map(str,a[::-1]))
     s=''.join(a)
     print((int(s,2)))
+
+#44. https://www.hackerrank.com/challenges/kangaroo/problem
+
+x1,v1,x2,v2 = list(map(int,input().split()))
+
+def func(x1,v1,x2,v2):
+    n=1
+    while(n<10000):
+        if (x1 + n*v1) == (x2+n*v2):
+            return("YES")
+        n+=1
+    return("NO")
+print(func(x1,v1,x2,v2))
+
+#45. https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
+
+#ar=[3, 4 ,21, 36 ,10 ,28 ,35 ,5 ,24, 42]
+def breakingRecords(scores):
+    ar=scores
+    highest_score=ar[0]
+    hcount=0
+    lcount=0
+    lowest_score=ar[0]
+    score=ar[0]
+    
+    for ind,i in enumerate(ar):
+        if i<lowest_score:
+            lowest_score=i
+            lcount+=1
+            
+        if i>highest_score:
+            highest_score=i
+            hcount+=1
+    return([hcount,lcount])
+print(' '.join(map(str,breakingRecords(ar))))
+
+#46. https://www.hackerrank.com/challenges/divisible-sum-pairs/problem
+a=[1,2,3,4,5,6]
+def divisibleSumPairs(n, k, ar):
+    a=ar
+    idx=0
+    count=0
+    for i in range(n):
+        pos1=a[idx]
+        for ind,i in enumerate(a):
+            if idx!=ind:
+                if (i+pos1)% k==0:
+                    count+=1                
+        idx+=1
+    return(count//2)
+divisibleSumPairs(6,5,a)   
+
+#47. https://www.hackerrank.com/challenges/bon-appetit/problem
+n,k=4,1
+ar=[3,10,2,9]
+
+def bonAppetit(bill, k, b):
+    ar=bill
+    charged=b
+    ar.pop(k)
+    actual = int(sum(ar)/2)
+    if charged==actual:
+        return("Bon Appetit")
+    else:
+        return(charged-actual)
+bonAppetit(ar, k, 12)
